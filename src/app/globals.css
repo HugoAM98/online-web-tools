@@ -24,3 +24,20 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+body {
+  @apply bg-gray-50 dark:bg-gray-900 font-sans text-gray-900 dark:text-gray-100;
+}
+
+h1, h2, h3 {
+  @apply font-semibold;
+}
+
+a {
+  @apply no-underline;
+}
+
+a:hover {
+  @apply underline;
+}
