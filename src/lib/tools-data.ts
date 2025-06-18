@@ -1,6 +1,5 @@
-// src/lib/tools-data.ts
-
 import JSONFormatter from '@/components/JSONFormatter';
+import CodeMinifier from '@/components/CodeMinifier'; // importa tu nuevo componente
 
 import type { Tool } from './types';
 
@@ -25,13 +24,23 @@ export const tools: Tool[] = [
     component: JSONFormatter,
   },
 
-  // Puedes añadir más herramientas similares aquí, por ejemplo:
-  // {
-  //   id: 'image-converter',
-  //   titles: { es: 'Convertidor de imágenes', en: 'Image Converter', fr: 'Convertisseur d\'images' },
-  //   descriptions: { es: 'Convierte imágenes entre formatos.', en: 'Convert images between formats.', fr: 'Convertissez des images entre formats.' },
-  //   slugs: { es: 'convertidor-imagenes', en: 'image-converter', fr: 'convertisseur-images' },
-  //   component: ImageConverterComponent,
-  // },
-
+  {
+    id: 'code-minifier',
+    titles: {
+      es: 'Minificador de Código',
+      en: 'Code Minifier',
+      fr: 'Minimiseur de Code',
+    },
+    descriptions: {
+      es: 'Minifica tu código JavaScript, CSS o HTML al instante.',
+      en: 'Minify your JavaScript, CSS, or HTML code instantly.',
+      fr: 'Minimisez votre code JavaScript, CSS ou HTML instantanément.',
+    },
+    slugs: {
+      es: 'minificador-codigo',
+      en: 'code-minifier',
+      fr: 'minimiseur-code',
+    },
+    component: CodeMinifier,
+  },
 ];

@@ -86,6 +86,8 @@ export default function ToolPage({ params }: Params) {
 
   if (!tool) return notFound();
 
+  const ToolComponent = tool.component; // ✅ componente dinámico
+
   const style = toolStyles[tool.id] || {
     containerBg: 'bg-white dark:bg-gray-800',
     titleColor: 'text-gray-900 dark:text-gray-100',
@@ -95,7 +97,7 @@ export default function ToolPage({ params }: Params) {
   };
 
   return (
-    <div className="min-h-screen w-100 bg-gray-50 dark:bg-gray-900 flex justify-center relative">
+    <div className="w-full min-h-screen bg-gray-50 dark:bg-gray-900 flex justify-center relative">
       {/* Publicidad izquierda */}
       <aside className="hidden lg:block fixed left-0 top-0 h-full w-48 bg-gray-200 dark:bg-gray-800 p-4 text-center text-sm text-gray-600 dark:text-gray-300">
         Espacio para Google Ads (izquierda)
@@ -113,18 +115,17 @@ export default function ToolPage({ params }: Params) {
         </div>
 
         <main
-  className={`${style.containerBg} p-6 rounded-md shadow-md w-full max-w-full transition-colors duration-500`}
->
-  <h1 className={`${style.titleColor} text-3xl font-bold mb-4`}>
-    {tool.titles[lang]}
-  </h1>
-  <p className={`${style.descriptionColor} mb-6`}>
-    {tool.descriptions[lang]}
-  </p>
+          className={`${style.containerBg} p-6 rounded-md shadow-md w-full max-w-full transition-colors duration-500`}
+        >
+          <h1 className={`${style.titleColor} text-3xl font-bold mb-4`}>
+            {tool.titles[lang]}
+          </h1>
+          <p className={`${style.descriptionColor} mb-6`}>
+            {tool.descriptions[lang]}
+          </p>
 
-  <JSONFormatter />
-</main>
-
+          <ToolComponent /> {/* ✅ componente dinámico */}
+        </main>
 
         {/* Publicidad abajo */}
         <div className="mt-6 p-4 border rounded bg-gray-100 dark:bg-gray-800 text-center text-sm text-gray-500 dark:text-gray-400">

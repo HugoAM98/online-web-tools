@@ -37,7 +37,8 @@ export default function LangLayout({ children, params }: { children: React.React
         </div>
       </header>
 
-      <main className="flex-grow max-w-5xl mx-auto px-4 py-10">{children}</main>
+      <main className="flex-grow max-w-5xl mx-auto px-4 py-10 w-[80%]
+">{children}</main>
     </div>
   );
 }
